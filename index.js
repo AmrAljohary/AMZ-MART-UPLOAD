@@ -32,6 +32,8 @@ app.use(
       "https://amz-mart.vercel.app",
       "https://amz-mart-dash.vercel.app",
       "https://6632-156-197-24-197.ngrok-free.app",
+      "https://dash.aiword999.com",
+      "https://aiword999.com",
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
