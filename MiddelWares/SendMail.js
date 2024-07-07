@@ -3,23 +3,24 @@ require("dotenv").config();
 const user = process.env.EMAIL;
 const pass = process.env.PASSWORD;
 
-// var smtpTransport = nodemailer.createTransport({
-//   host: "mail.sendioo.com",
-//   port: "465",
-//   secure: "true",
-//   debug: "true",
-//   auth: {
-//     user: user,
-//     pass: pass,
-//   },
-// });
 var smtpTransport = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.hostinger.com",
+  port: 465,
+  secure: true, 
+  debug: true,
   auth: {
     user: user,
     pass: pass,
   },
 });
+
+// var smtpTransport = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: user,
+//     pass: pass,
+//   },
+// });
 module.exports.sendVerifyEmail = async (email, name, otp) => {
   await smtpTransport.sendMail({
     from: user,
